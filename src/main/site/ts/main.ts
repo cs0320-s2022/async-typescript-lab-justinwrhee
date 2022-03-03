@@ -7,6 +7,12 @@ const sun  = document.getElementById('sun');
 const moon = document.getElementById('moon');
 const rising  = document.getElementById('rising');
 
+if (sun != null && moon != null && rising != null) {
+  sun.addEventListener("change",postAndUpdate);
+  moon.addEventListener("change", postAndUpdate);
+  rising.addEventListener("change", postAndUpdate);
+}
+
 // TODO: Define a type for the request data object here.
 type MatchesRequestData = {
   sun: string;

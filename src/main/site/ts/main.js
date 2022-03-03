@@ -15,6 +15,11 @@ const sun = document.getElementById('sun');
 // TODO: Do the same for moon and rising
 const moon = document.getElementById('moon');
 const rising = document.getElementById('rising');
+if (sun != null && moon != null && rising != null) {
+    sun.addEventListener("change", postAndUpdate);
+    moon.addEventListener("change", postAndUpdate);
+    rising.addEventListener("change", postAndUpdate);
+}
 function postAndUpdate() {
     // TODO: empty the suggestionList (you want new suggestions each time someone types something new)
     //  HINT: use .innerHTML
