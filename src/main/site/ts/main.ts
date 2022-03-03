@@ -88,9 +88,6 @@ document.addEventListener('keyup', e => {
   }
 })
 
-// @ts-ignore
-document.getElementById("go").addEventListener("click", postAndUpdate);
-
 async function updateValues(sunval: string, moonval: string, risingval: string): Promise<void>{
   // This line asynchronously waits 1 second before updating the values.
   // It's unnecessary here, but it simulates asynchronous behavior you often have to account for.

@@ -76,8 +76,6 @@ document.addEventListener('keyup', e => {
         updateValues('Taurus', 'Sagittarius', 'Sagittarius').then(r => console.log(r)).then(() => postAndUpdate());
     }
 });
-// @ts-ignore
-document.getElementById("go").addEventListener("click", postAndUpdate);
 function updateValues(sunval, moonval, risingval) {
     return __awaiter(this, void 0, void 0, function* () {
         // This line asynchronously waits 1 second before updating the values.
