@@ -114,17 +114,18 @@ public final class Main {
       // TODO: Get JSONObject from req and use it to get the value of the sun, moon,
       // and rising
       // for generating matches
-      Gson g = new Gson();
-      JSONObject json = g.fromJson(req.body(), JSONObject.class);
       String sunVal = null;
       String moonVal = null;
       String risingVal = null;
-      try {
-        sunVal = json.get("sun").toString();
-        moonVal = json.get("moon").toString();
-        risingVal = json.get("rising").toString();
-      } catch (JSONException ignored) {}
 
+      try {
+        JSONObject json = new JSONObject(req.body());
+        sunVal = json.getString("sun");
+        moonVal = json.getString("moon");
+        risingVal = json.getString("rising");
+      } catch (JSONException e) {
+        System.out.println(e.getMessage());
+      }
 
       // TODO: use the MatchMaker.makeMatches method to get matches
       List<String> matches = MatchMaker.makeMatches(sunVal, moonVal, risingVal);
